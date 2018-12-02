@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use Illuminate\Http\Request;
+use Goutte\Client;
 
 class PlayerController extends Controller
 {
@@ -46,7 +47,15 @@ class PlayerController extends Controller
      */
     public function show(Player $player)
     {
-        //
+        $client = new Client();
+
+        $url = "https://chess24.com/es/profile/" . $player->nick_chess24;
+
+        $crawler = $client->request('GET', $url);
+
+        $rank = $crawler->filter('.userRankingContainer')->first();
+
+        return view('player', compact('rank', 'player'));
     }
 
     /**

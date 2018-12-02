@@ -13,6 +13,8 @@
 
 Route::get('/', 'PageController@index')->name("Welcome");
 
+Route::get('/player/{player}', 'PlayerController@show')->name("player");
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -37,7 +37,7 @@
                             @foreach($group->players as $player)
                                 
                                 <tr>
-                                    <td>{{$player->nick_chess24}}</td>
+                                <td><a href="{{route('player', $player)}}">{{$player->nick_chess24}}</a></td>
                                     <td>@if($i == 1)
                                          -
                                         @else
