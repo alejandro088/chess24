@@ -1,9 +1,27 @@
 @extends('layouts.app')
 
+@section('css')
+    <style>
+        .bg_white {
+            background-color: goldenrod;
+            border: 2pt;
+            padding: 4px;
+            color: white;
+        }
+
+        .bg_black {
+            background-color: goldenrod;
+            border: 2pt;
+            padding: 4px;
+            color: black;
+        }
+    </style>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Cuadro principal - Torneo Chess24 Discord</div>
 
@@ -42,25 +60,25 @@
                                          -
                                         @else
                                         
-                                        {{$player->matchWhiteWithRival($rivals[0])}} | {{$player->matchBlackWithRival($rivals[0])}}
+                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[0])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[0])}}
                                         @endif 
                                     </td>
                                     <td>@if($i == 2)
                                          -
                                         @else
-                                        {{$player->matchWhiteWithRival($rivals[1])}} | {{$player->matchBlackWithRival($rivals[1])}}
+                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[1])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[1])}}
                                         @endif
                                     </td>
                                     <td>@if($i == 3)
                                          -
                                         @else
-                                        {{$player->matchWhiteWithRival($rivals[2])}} | {{$player->matchBlackWithRival($rivals[2])}}
+                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[2])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[2])}}
                                         @endif
                                     </td>
                                     <td>@if($i == 4)
                                          -
                                         @else
-                                        {{$player->matchWhiteWithRival($rivals[3])}} | {{$player->matchBlackWithRival($rivals[3])}}
+                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[3])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[3])}}
                                         @endif
                                     </td>
                                     <td>{{$player->points}}</td>                                
