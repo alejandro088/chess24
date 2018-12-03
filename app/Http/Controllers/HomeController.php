@@ -60,5 +60,7 @@ class HomeController extends Controller
             $match->created_at = now();
             $match->save();
         }
+
+        return redirect()->back()->with("status", "Se ha registrado el resultado");
     }
 }
