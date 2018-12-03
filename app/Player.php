@@ -25,4 +25,18 @@ class Player extends Model
         
         return $result[0]->result_black;
     }
+
+    public function playedWhiteWithRival(Player $rival)
+    {
+        $result = Match::where('black_player_id', $rival->id)->where('white_player_id', $this->id)->first();
+
+        return ($result->created_at != NULL);
+    }
+
+    public function playedBlackWithRival(Player $rival)
+    {
+        $result = Match::where('white_player_id', $rival->id)->where('black_player_id', $this->id)->first();
+
+        return ($result->created_at != NULL);
+    }
 }

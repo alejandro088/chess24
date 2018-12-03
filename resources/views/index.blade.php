@@ -60,25 +60,65 @@
                                          -
                                         @else
                                         
-                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[0])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[0])}}
+                                            @if($player->playedWhiteWithRival($rivals[0]))
+                                                <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[0])}} 
+                                            @else
+                                                NA
+                                            @endif
+                                            |
+                                            @if($player->playedBlackWithRival($rivals[0])) 
+                                            <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[0])}}
+                                            @else
+                                                NA
+                                            @endif
                                         @endif 
                                     </td>
                                     <td>@if($i == 2)
                                          -
                                         @else
-                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[1])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[1])}}
+                                            @if($player->playedWhiteWithRival($rivals[1]))
+                                            <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[1])}} 
+                                            @else
+                                                NA
+                                            @endif
+                                            |
+                                            @if($player->playedBlackWithRival($rivals[1])) 
+                                            <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[1])}}
+                                            @else
+                                                NA
+                                            @endif
                                         @endif
                                     </td>
                                     <td>@if($i == 3)
                                          -
                                         @else
-                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[2])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[2])}}
+                                            @if($player->playedWhiteWithRival($rivals[2]))
+                                            <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[2])}} 
+                                            @else
+                                                NA
+                                            @endif
+                                            |
+                                            @if($player->playedBlackWithRival($rivals[2])) 
+                                            <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[2])}}
+                                            @else
+                                                NA
+                                            @endif
                                         @endif
                                     </td>
                                     <td>@if($i == 4)
                                          -
                                         @else
-                                        <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[3])}} | <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[3])}}
+                                            @if($player->playedWhiteWithRival($rivals[3]))
+                                            <span class="bg_white"><i class="fas fa-chess"></i></span> {{$player->matchWhiteWithRival($rivals[3])}} 
+                                            @else
+                                                NA
+                                            @endif
+                                            |
+                                            @if($player->playedBlackWithRival($rivals[3])) 
+                                            <span class="bg_black"><i class="fas fa-chess"></i></span> {{$player->matchBlackWithRival($rivals[3])}}
+                                            @else
+                                                NA
+                                            @endif
                                         @endif
                                     </td>
                                     <td>{{$player->points}}</td>                                
