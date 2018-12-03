@@ -15,6 +15,10 @@ Route::get('/', 'PageController@index')->name("Welcome");
 
 Route::get('/player/{player}', 'PlayerController@show')->name("player");
 
-Auth::routes(['register' => false]);
+//Auth::routes(['register' => false]);
+Auth::routes();
 
+Route::get('/SetupMatches', 'MatchController@SetupMatches')->middleware('auth')->name('SetupMatches');
+Route::get('/setResult/{match}/{score}', 'HomeController@setResult')->name('setResult');
 Route::get('/home', 'HomeController@index')->name('home');
+

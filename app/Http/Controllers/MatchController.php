@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Match;
+use App\Group;
 use Illuminate\Http\Request;
 
 class MatchController extends Controller
@@ -25,6 +26,25 @@ class MatchController extends Controller
     public function create()
     {
         //
+    }
+
+    public function SetupMatches()
+    {
+        $groups = Group::all();
+        foreach($groups as $group){
+            $rivals = $group->players;
+            
+            foreach($rivals as $rival)
+                foreach ($group->players as $player)
+                    if($rival != $player){ 
+                        Match::create([
+                            'white_player_id' => $rival->id,
+                            'black_player_id' => $player->id,
+                            'created_at' => NULL,
+                            'updated_at' => NULL
+                        ]);                        
+                    }
+        }
     }
 
     /**
