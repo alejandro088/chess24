@@ -55,7 +55,9 @@ class PlayerController extends Controller
 
         $rank = $crawler->filter('.userRankingContainer')->first();
 
-        return view('player', compact('rank', 'player'));
+        $userInfo = $crawler->filter('.userInfo')->first();
+
+        return view('player', compact('userInfo', 'rank', 'player'));
     }
 
     /**
