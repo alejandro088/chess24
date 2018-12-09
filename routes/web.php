@@ -15,6 +15,8 @@ Route::get('/', 'PageController@index')->name("Welcome");
 
 Route::get('/player/{player}', 'PlayerController@show')->name("player");
 
+Route::get('/group/{group}', 'GroupController@show')->name("group");
+
 Auth::routes(['register' => false]);
 //Auth::routes();
 
